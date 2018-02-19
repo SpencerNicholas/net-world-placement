@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" 
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<!-- In head link css file names styles.css, javascript file init.js, and the jQuery library-->
+		<link rel = "stylesheet" href = "styles.css"/>
+		<script src = "init.js"></script>
+		<script src="jquery-3.3.1.js"></script>
+		
+		<!-- Slick stylesheets -->
+		<link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+		<link rel = "stylesheet" type = "text/css" href = "slick/slick-theme.css"/> 
+		
+		
+	</head>
+	
+	<body>
+	<!-- Class containing images used in carousel from slick -->
+		<div class="image-slick">
+			<div><img src="images/1.main_5.jpg"></div>
+			<div><img src="images/8x6_locking_1_5.jpg"></div>
+			<div><img src="images/12x6-locking-target-sheet-1.jpg"></div>
+			<div><img src="images/forb_black_1_1.jpg"></div>
+			<div><img src="images/main4.jpg"></div>
+		</div>
+		<script type ="text/javascript" src="slick/slick.min.js"></script>
+		<script src="init.js"></script>
+		
+		
+		
+		<ul>
+			<li>1. We have a variable, defined as $string, which is a string 200 characters long, and we want to display only 40 characters in a snippet. What approach would you take to achieve this? </li>
+			<button type="button" onclick="revealAnswer(1)">Reveal</button>
+			
+			<div id="answer1" display: hidden>
+			<!-- Change value of $startchar to change which 40 characters are shown -->
+			string snippedstring ( string $string, int $startchar [, int 40]);
+			echo $snippedstring;
+			</div>
+			<br />
+			
+			
+			<li>2. $string contains letters and numbers, the numbers aren't relevant to us, so we want to remove all of the numbers from the string. What approach would you take to achieve this?</li>
+			<button type="button" onclick="revealAnswer(2)">Reveal</button>
+			
+			<div id="answer2" display: hidden>
+			<!-- Replaces all numbers with nothing using regualr expression -->
+			$string = preg_replace('/[0-9]+/', '',$string);
+			</div>
+			<br />
+			
+			
+			<li>3. $string has been encrypted using a basic encryption method. We know that all occurrences of the letters 'a, r, d' were replaced with 'c, m, e' respectively; we need to replace these letters with the respective letters. What approach would you take to achieve this? </li>
+			<button type="button" onclick="revealAnswer(3)">Reveal</button>
+			
+			<div id="answer3" display: hidden>
+			<!-- I was unsure on how to do this in a more efficent way -->
+			$string = preg_replace('/[a]/','c', $string); <br />
+			$string = preg_replace('/[r]/','m', $string); <br />
+			$string = preg_replace('/[d]/','e', $string);
+			</div>
+			<br />
+			
+			
+			<li>4. We know that $string is a url, what we need to know is the domain name used in the url. What approach would you take to achieve this? </li>
+			<button type="button" onclick="revealAnswer(4)">Reveal</button>
+			
+			<div id="answer4" display: hidden>
+			<!-- This will give you an assosiative array of each URL component from which you'll be able to get the domain name -->
+			$array = mixed parse_url ( string $string);
+			</div>
+			<br />
+			
+			
+			<li>5. Lastly, there were 2 parameters passed in the url. We need to know the name and value of the 2 parameters. What approach would you take to achieve this? </li>
+			<button type="button" onclick="revealAnswer(5)">Reveal</button>
+			
+			<div id="answer5" display: hidden>
+			<!-- Using the assosiative array created in the last question you could write it out in a loop to find the name and value -->
+			$array = mixed parse_url ( string $string); <br />
+			<br />
+			foreach ($array as $name ==> $value){ <br />
+				echo "Name: $name; Value: $value\n"; <br />
+				} <br />
+			</div>
+			<br />
+			
+			
+		</ul>
+		
+		
+		
+	</body>
+	
+</html>
